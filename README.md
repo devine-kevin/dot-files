@@ -5,9 +5,9 @@ dot-files
 
 ### Using Git and the bootstrap script
 
-Clone the repository to a local directory like `~/Source/dot-files`
-Add `~/dot-files` as a symlink to the source.
-The bootstrapper script will update from github and copy the files to the home directory.
+* Clone the repository to a local directory like `~/Source/dot-files`
+* Add `~/dot-files` as a symlink to the source.
+* The bootstrapper script will update from github and copy the files to the home directory.
 
 ``bash
 git clone https://github.com/devine-kevin/dot-files.git && cd dot-files && source bootstrap.sh
