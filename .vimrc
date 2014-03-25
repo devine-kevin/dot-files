@@ -78,7 +78,6 @@ filetype indent on
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
-set listchars=tab:▸\ ,nbsp:•,eol:¬
 nmap <leader>h :set list!<CR>
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -127,8 +126,6 @@ noremap <leader>ws :%s/^\s\+<CR>:g/^\s*$/d<CR>:nohlsearch<CR>
 " ============== Colorscheme ======
 syntax enable
 set background=light
-call togglebg#map("<F5>")
-" let g:solarized_termcolors=256
 colorscheme default
 
 " ============== Nerdtree ==========
@@ -145,5 +142,5 @@ noremap <leader>l :TagbarToggle<CR>
 nnoremap <silent><leader><C-]> <C-w><C-]><C-w>T
 
 " ============ Syntastic ==========
-"let g:syntastic_phpcs_disable = 1
-let g:syntastic_phpcs_conf="--standard=Soapbox"
+let g:syntastic_phpcs_disable = 1
+"let g:syntastic_phpcs_conf="--standard=Soapbox"
