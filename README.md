@@ -15,9 +15,9 @@ git clone https://github.com/devine-kevin/dot-files.git && cd dot-files && sourc
 
 To update, `cd` into your local `dot-files` repository and then:
 
-``bash
+```bash
 source bootstrap.sh
-``
+```
 
 ### Add custom commands
 
