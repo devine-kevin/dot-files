@@ -7,21 +7,17 @@ dot-files
 
 * Clone the repository to a local directory like `~/Source/dot-files`
 * Add `~/dot-files` as a symlink to the source.
-* The bootstrapper script will update from github and copy the files to the home directory.
+* Install Oh-My-Zsh
 
 ```bash
-git clone https://github.com/devine-kevin/dot-files.git && cd dot-files && source bootstrap.sh
-```
-
-To update, `cd` into your local `dot-files` repository and then:
-
-```bash
-source bootstrap.sh
+$ git clone https://github.com/devine-kevin/dot-files.git ~/Source 
+$ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+$ cp ~/Source/dot-files/zsh_profile/.zshrc ~/.zshrc
 ```
 
 ### Add custom commands
 
-Use `~/.extra` to set up gitcongif
+Use `~/.oh-my-zsh/custom/extra.zsh` to set up gitcongif
 
 ```bash
 # Git credentials not in the repository
@@ -32,6 +28,3 @@ GIT_AUTHOR_EMAIL="devine.kevin@gmail.com"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
-## Borrowed heavily from mathiasbynes
-* https://github.com/mathiasbynens/dotfiles
-
