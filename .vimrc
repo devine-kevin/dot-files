@@ -44,8 +44,10 @@ endif
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-"turn on syntax highlighting
-syntax on
+" ============== Colorscheme ======
+syntax on            "turn on syntax highlighting
+let g:dracula_italic = 0
+colorscheme dracula
 
 " ================ Search Settings  =================
 
@@ -102,7 +104,6 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -123,11 +124,6 @@ autocmd BufWrite *.html :call DeleteTrailingWs()
 " ============== Delete Whitespace ======
 noremap <leader>ws :%s/^\s\+<CR>:g/^\s*$/d<CR>:nohlsearch<CR>
 
-" ============== Colorscheme ======
-syntax enable
-set background=light
-colorscheme default
-
 " ============== Nerdtree ==========
 noremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
@@ -142,10 +138,17 @@ noremap <leader>l :TagbarToggle<CR>
 nnoremap <silent><leader><C-]> <C-w><C-]><C-w>T
 
 " ============ Syntastic ==========
+if has ('statusline')
+	set statusline+=%#warningmsg#
+	set statusline+={SyntasticStatuslineFlag()}
+	set statusline+=%*
+endif
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_phpcs_disable = 1
-"let g:syntastic_javascript_checkers = ['jshint']
-"let g:syntastic_phpcs_conf="--standard=Soapbox"
+let g:syntastic_phpcs_disable = 1 
+
+" ============ Custom =============
+:ia preprint <CR>echo '<pre>';print_r();echo '</';
