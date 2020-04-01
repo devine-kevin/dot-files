@@ -22,3 +22,6 @@
 [submodule "syntastic"]
 	path = .vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule ".vim/bundle/dracula"]
+	path = .vim/bundle/dracula
+	url = https://github.com/dracula/vim.git
