@@ -152,3 +152,5 @@ let g:syntastic_phpcs_disable = 1
 
 " ============ Custom =============
 :ia preprint <CR>echo '<pre>';print_r();echo '</';
+nnoremap <leader>nn :set nonumber<CR>
+nnoremap <leader>n :set number<CR>
