@@ -10,9 +10,6 @@
 [submodule "jshint2.vim"]
 	path = .vim/bundle/jshint2.vim
 	url = https://github.com/NikolayFrantsev/jshint2.vim
-[submodule "syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "vim-colors-solarized"]
 	path = .vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized
