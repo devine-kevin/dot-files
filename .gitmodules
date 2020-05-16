@@ -1,9 +1,6 @@
 [submodule "vim-abolish"]
 	path = .vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule "dash.vim"]
-	path = .vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim
 [submodule "dracula"]
 	path = .vim/bundle/dracula
 	url = https://github.com/dracula/vim.git
