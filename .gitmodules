@@ -4,6 +4,9 @@
 [submodule "dash.vim"]
 	path = .vim/bundle/dash.vim
 	url = https://github.com/rizzatti/dash.vim
+[submodule "delimitMate"]
+	path = .vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
 [submodule "dracula"]
 	path = .vim/bundle/dracula
 	url = https://github.com/dracula/vim.git
