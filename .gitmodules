@@ -13,9 +13,6 @@
 [submodule "dracula"]
 	path = .vim/bundle/dracula
 	url = https://github.com/dracula/vim.git
-[submodule "jshint2.vim"]
-	path = .vim/bundle/jshint2.vim
-	url = https://github.com/NikolayFrantsev/jshint2.vim
 [submodule "nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree
