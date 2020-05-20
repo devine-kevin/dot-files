@@ -16,9 +16,6 @@
 [submodule "nerdtree"]
 	path = .vim/bundle/nerdtree
 	url = https://github.com/preservim/nerdtree
-[submodule "syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "tagbar"]
 	path = .vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
