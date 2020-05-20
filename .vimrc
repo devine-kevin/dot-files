@@ -60,7 +60,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " ================ Turn Off Swap Files ==============
 
-set noswapfile
+set noswapfile 
 set nobackup
 set nowb
 
@@ -79,6 +79,8 @@ filetype indent on
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
+
+set colorcolumn=80,100
 
 nmap <leader>h :set list!<CR>
 highlight NonText guifg=#4a4a59
@@ -110,20 +112,6 @@ set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" ================ Delete trailing white space ======
-func! DeleteTrailingWs()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal 'z"
-endfunc
-autocmd BufWrite *.php :call DeleteTrailingWs()
-autocmd BufWrite *.js :call DeleteTrailingWs()
-autocmd BufWrite *.xml :call DeleteTrailingWs()
-autocmd BufWrite *.html :call DeleteTrailingWs()
-
-" ============== Delete Whitespace ======
-noremap <leader>ws :%s/^\s\+<CR>:g/^\s*$/d<CR>:nohlsearch<CR>
-
 " ============== Nerdtree ==========
 noremap <leader>t :NERDTreeToggle<CR>
 let NERDTreeQuitOnOpen=1
@@ -137,20 +125,32 @@ let g:tagbar_autoclose=1
 noremap <leader>l :TagbarToggle<CR> 
 nnoremap <silent><leader><C-]> <C-w><C-]><C-w>T
 
-" ============ Syntastic ==========
-if has ('statusline')
-	set statusline+=%#warningmsg#
-	set statusline+={SyntasticStatuslineFlag()}
-	set statusline+=%*
-endif
+" ============ ALE  =============
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier'],
+\   'javascript': ['prettier'],
+\   'json': ['prettier'],
+\   'yaml': ['prettier'],
+\}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_phpcs_disable = 1 
+let g:ale_lint_delay = 200
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_linters = {
+\   'css': ['prettier'],
+\   'javascript': ['prettier', 'jshint'],
+\   'json': ['prettier'],
+\   'php': ['php', 'phpmd', 'phpstan'],
+\   'yaml': ['prettier'],
+\}
 
-" ============ Custom =============
-:ia preprint <CR>echo '<pre>';print_r();echo '</';
-nnoremap <leader>nn :set nonumber<CR>
-nnoremap <leader>n :set number<CR>
+let g:ale_set_highlights = 1
+let g:ale_php_phpmd_executable = 'phpmd'
+let g:ale_php_phpmd_ruleset = 'cleancode,codesize,controversial,design,naming,unusedcode'
+let g:ale_php_phpstan_autoload = ''
+let g:ale_php_phpstan_configuration = ''
+let g:ale_php_phpstan_executable = 'phpstan'
