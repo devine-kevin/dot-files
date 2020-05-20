@@ -1,3 +1,6 @@
+[submodule "ale"]
+	path = .vim/bundle/ale
+	url = https://github.com/dense-analysis/ale
 [submodule "closetag"]
 	path = .vim/bundle/closetag
 	url = https://github.com/vim-scripts/closetag.vim
