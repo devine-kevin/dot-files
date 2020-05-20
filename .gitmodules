@@ -4,9 +4,6 @@
 [submodule "closetag"]
 	path = .vim/bundle/closetag
 	url = https://github.com/vim-scripts/closetag.vim
-[submodule "dash.vim"]
-	path = .vim/bundle/dash.vim
-	url = https://github.com/rizzatti/dash.vim
 [submodule "delimitMate"]
 	path = .vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
