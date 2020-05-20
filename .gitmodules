@@ -28,9 +28,6 @@
 [submodule "tcomment_vim"]
 	path = .vim/bundle/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
-[submodule "vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized
 [submodule "vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
