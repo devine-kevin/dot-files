@@ -60,22 +60,22 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " ================ Turn Off Swap Files ==============
 
-set noswapfile 
+set noswapfile
 set nobackup
 set nowb
 
 " ================ Indentation ======================
 
+filetype plugin on
+filetype indent on
+
+set expandtab
 set autoindent
-set smartindent
 set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set pastetoggle=<F12>
-
-filetype plugin on
-filetype indent on
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -122,7 +122,7 @@ let NERDTreeIgnore=['\.svn', '.localized']
 let g:tagbar_usearrows=1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
-noremap <leader>l :TagbarToggle<CR> 
+noremap <leader>l :TagbarToggle<CR>
 nnoremap <silent><leader><C-]> <C-w><C-]><C-w>T
 
 " ============ ALE  =============
@@ -144,11 +144,13 @@ let g:ale_linters = {
 \   'css': ['prettier'],
 \   'javascript': ['prettier', 'jshint'],
 \   'json': ['prettier'],
-\   'php': ['php', 'phpmd', 'phpstan'],
+\   'php': ['php', 'phpcs', 'phpmd', 'phpstan', 'psalm'],
 \   'yaml': ['prettier'],
 \}
 
 let g:ale_set_highlights = 1
+let g:ale_php_phpcs_standard = 'PSR12'
+let g:ale_php_phpcs_options = ''
 let g:ale_php_phpmd_executable = 'phpmd'
 let g:ale_php_phpmd_ruleset = 'cleancode,codesize,controversial,design,naming,unusedcode'
 let g:ale_php_phpstan_autoload = ''
